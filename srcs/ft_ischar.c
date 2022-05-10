@@ -1,33 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_ischar.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anloisea <anloisea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/07 12:19:25 by anloisea          #+#    #+#             */
-/*   Updated: 2022/05/10 18:31:15 by anloisea         ###   ########.fr       */
+/*   Created: 2022/05/10 11:06:45 by anloisea          #+#    #+#             */
+/*   Updated: 2022/05/10 16:49:48 by anloisea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
-{	
-	t_stack	*a;
-	t_stack	*b;
+int	ft_ischar(char **tab)
+{
+	int	i;
+	int	j;
 
-	b = NULL;
-	if (argc < 2)
-		error(1, "push_swap takes at least 1 argument.\n");
-	a = ft_parse(argv);
-	if (a == NULL || a->next == NULL)
+	i = 1;
+	j = 0;
+	while (tab[i])
 	{
-		system("leaks push_swap");	
-		error(2, "error on parsing\n");
+		j = 0;
+		while(tab[i][j])
+		{
+			if (!ft_isdigit(tab[i][j]))
+				return (1);
+			j++;
+		}
+		i++;
 	}
-	ft_displaylst(a, a);
-	ft_lstclear(&a);
-	system("leaks push_swap");
 	return (0);
-}
+}	

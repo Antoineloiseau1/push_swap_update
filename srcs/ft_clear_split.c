@@ -1,33 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_clear_split.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anloisea <anloisea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/07 12:19:25 by anloisea          #+#    #+#             */
-/*   Updated: 2022/05/10 18:31:15 by anloisea         ###   ########.fr       */
+/*   Created: 2022/05/10 13:44:45 by anloisea          #+#    #+#             */
+/*   Updated: 2022/05/10 15:04:22 by anloisea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
-{	
-	t_stack	*a;
-	t_stack	*b;
+void	ft_clear_split(char **split)
+{
+	int	i;
 
-	b = NULL;
-	if (argc < 2)
-		error(1, "push_swap takes at least 1 argument.\n");
-	a = ft_parse(argv);
-	if (a == NULL || a->next == NULL)
+	i = 0;
+	if (split == NULL)
+		return ;
+	while (split[i])
 	{
-		system("leaks push_swap");	
-		error(2, "error on parsing\n");
+		free(split[i]);
+		i++;
 	}
-	ft_displaylst(a, a);
-	ft_lstclear(&a);
-	system("leaks push_swap");
-	return (0);
+	free(split);
 }

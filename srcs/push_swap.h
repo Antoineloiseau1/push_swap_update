@@ -6,7 +6,7 @@
 /*   By: anloisea <anloisea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 17:32:31 by anloisea          #+#    #+#             */
-/*   Updated: 2022/05/09 17:08:42 by anloisea         ###   ########.fr       */
+/*   Updated: 2022/05/10 18:30:35 by anloisea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,16 @@
 # include <unistd.h>
 # include "../libft/libft.h"
 # include "../ft_printf/ft_printf.h"
+# include <limits.h>
+
 
 void	ft_displaylst(t_stack *a, t_stack *b);
-int	ft_error(int err_no);
+void	error(int err_no, char *text);
+t_stack	*ft_parse(char **args);
+int		ft_isdouble(t_stack *lst);
+void	ft_clear_split(char **split);
+int		ft_ischar(char **tab);
+int		ft_is_offlimits(t_stack	*lst);
 
 // Swap functions:
 void	ft_swap_a(t_stack *a);

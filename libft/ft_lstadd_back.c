@@ -6,7 +6,7 @@
 /*   By: anloisea <anloisea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/25 17:38:56 by anloisea          #+#    #+#             */
-/*   Updated: 2022/05/09 10:44:30 by anloisea         ###   ########.fr       */
+/*   Updated: 2022/05/10 12:53:00 by anloisea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_lstadd_back(t_stack **lst, t_stack *new)
 	t_stack	*tmp;
 
 	tmp = *lst;
-	if (!*lst)
+	if (*lst == NULL)
 	{
 		*lst = new;
 		return ;

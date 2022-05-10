@@ -6,7 +6,7 @@
 #    By: anloisea <anloisea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/03 15:16:13 by anloisea          #+#    #+#              #
-#    Updated: 2022/04/08 18:08:41 by anloisea         ###   ########.fr        #
+#    Updated: 2022/05/10 13:03:38 by anloisea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ OBJS	= ${SRCS:.c=.o}
 
 HDR	= ft_printf.h
 
-CC		= gcc
+CC		= gcc -g
 
 CFLAGS	= -Wall -Wextra -Werror
 

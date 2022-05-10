@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_is_offlimits.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anloisea <anloisea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/07 12:19:25 by anloisea          #+#    #+#             */
-/*   Updated: 2022/05/10 18:31:15 by anloisea         ###   ########.fr       */
+/*   Created: 2022/05/10 17:21:49 by anloisea          #+#    #+#             */
+/*   Updated: 2022/05/10 18:09:14 by anloisea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
-{	
-	t_stack	*a;
-	t_stack	*b;
+int	ft_is_offlimits(t_stack	*lst)
+{
+	t_stack	*tmp;
 
-	b = NULL;
-	if (argc < 2)
-		error(1, "push_swap takes at least 1 argument.\n");
-	a = ft_parse(argv);
-	if (a == NULL || a->next == NULL)
+	tmp = lst;
+	while (lst)
 	{
-		system("leaks push_swap");	
-		error(2, "error on parsing\n");
+		if (tmp->number > INT_MAX || tmp->number < INT_MIN)
+		{
+			ft_lstclear(&lst);
+			return (1);
+		}
+		lst = lst->next;
 	}
-	ft_displaylst(a, a);
-	ft_lstclear(&a);
-	system("leaks push_swap");
 	return (0);
 }
