@@ -6,7 +6,7 @@
 /*   By: anloisea <anloisea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 11:06:45 by anloisea          #+#    #+#             */
-/*   Updated: 2022/05/11 14:38:31 by anloisea         ###   ########.fr       */
+/*   Updated: 2022/05/11 16:54:12 by anloisea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	check_for_char(char **tab)
 	while (tab[i])
 	{
 		j = 0;
-		while(tab[i][j])
+		while (tab[i][j])
 		{
 			if (!ft_isdigit(tab[i][j]))
 				error(2, "push_swap only takes integers as argument.\n");
@@ -30,4 +30,4 @@ void	check_for_char(char **tab)
 		}
 		i++;
 	}
-}	
+}

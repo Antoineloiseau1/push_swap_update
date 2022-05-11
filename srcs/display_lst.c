@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_displaylst.c                                    :+:      :+:    :+:   */
+/*   display_lst.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anloisea <anloisea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 12:48:55 by anloisea          #+#    #+#             */
-/*   Updated: 2022/05/11 14:51:43 by anloisea         ###   ########.fr       */
+/*   Updated: 2022/05/11 16:54:50 by anloisea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	display_lst(t_stack *a, t_stack *b)
 	ft_printf("\na || b\n");
 	while (tmp_a || tmp_b)
 	{
-		if(tmp_b == NULL && tmp_a)
+		if (tmp_b == NULL && tmp_a)
 		{
 			ft_printf("%d ||  \n", tmp_a->number);
 			tmp_a = tmp_a->next;
