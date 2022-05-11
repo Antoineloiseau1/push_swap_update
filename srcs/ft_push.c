@@ -6,13 +6,13 @@
 /*   By: anloisea <anloisea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 13:32:33 by anloisea          #+#    #+#             */
-/*   Updated: 2022/05/09 15:23:43 by anloisea         ###   ########.fr       */
+/*   Updated: 2022/05/11 16:39:02 by anloisea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_push_a(t_stack **a, t_stack **b)
+void	push_a(t_stack **a, t_stack **b)
 {
 	t_stack	*tmp;
 
@@ -25,7 +25,7 @@ void	ft_push_a(t_stack **a, t_stack **b)
 	ft_printf("pa\n");
 }
 
-void	ft_push_b(t_stack **a, t_stack **b)
+void	push_b(t_stack **a, t_stack **b)
 {
 	t_stack	*tmp;
 

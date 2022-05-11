@@ -1,34 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ischar.c                                        :+:      :+:    :+:   */
+/*   check_double.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anloisea <anloisea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/10 11:06:45 by anloisea          #+#    #+#             */
-/*   Updated: 2022/05/10 16:49:48 by anloisea         ###   ########.fr       */
+/*   Created: 2022/05/10 11:23:27 by anloisea          #+#    #+#             */
+/*   Updated: 2022/05/11 16:33:45 by anloisea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_ischar(char **tab)
+void	check_double(t_stack *lst)
 {
-	int	i;
-	int	j;
+	t_stack	*i;
+	t_stack	*j;
 
-	i = 1;
-	j = 0;
-	while (tab[i])
+	i = lst;
+	while (i != NULL && i->next != NULL)
 	{
-		j = 0;
-		while(tab[i][j])
+		j = i->next;
+		while (j != NULL)
 		{
-			if (!ft_isdigit(tab[i][j]))
-				return (1);
-			j++;
+			if (j->number == i->number)
+				error(3, "duplicated numbers in arguments.\n");
+			j = j->next;
 		}
-		i++;
+		i = i->next;
 	}
-	return (0);
-}	
+}

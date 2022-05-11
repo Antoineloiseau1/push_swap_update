@@ -6,12 +6,11 @@
 /*   By: anloisea <anloisea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 16:59:56 by anloisea          #+#    #+#             */
-/*   Updated: 2022/05/10 18:48:46 by anloisea         ###   ########.fr       */
+/*   Updated: 2022/05/11 16:38:32 by anloisea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <stdio.h>
+#include "push_swap.h"
 
 static int	ft_isspace(char c)
 {
@@ -23,11 +22,11 @@ static int	ft_isspace(char c)
 		return (0);
 }
 
-long	ft_atoi(const char *str)
+long int	ft_atoi(const char *str)
 {
-	int			i;
-	long		result;
-	int			minus;
+	long int	i;
+	long int	result;
+	long int	minus;
 
 	i = 0;
 	result = 0;
@@ -45,6 +44,7 @@ long	ft_atoi(const char *str)
 		result = (result * 10) + (str[i] - '0');
 		i++;
 	}
-		printf("%ld\n", result*minus);
+	if (result * minus > INT_MAX || result * minus < INT_MIN)
+		error(4, "some values are off limits, please use integers.\n");
 	return (result * minus);
 }

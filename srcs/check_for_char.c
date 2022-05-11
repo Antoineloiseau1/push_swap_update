@@ -1,30 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_offlimits.c                                  :+:      :+:    :+:   */
+/*   check_for_char.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anloisea <anloisea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/10 17:21:49 by anloisea          #+#    #+#             */
-/*   Updated: 2022/05/10 18:09:14 by anloisea         ###   ########.fr       */
+/*   Created: 2022/05/10 11:06:45 by anloisea          #+#    #+#             */
+/*   Updated: 2022/05/11 14:38:31 by anloisea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_is_offlimits(t_stack	*lst)
+void	check_for_char(char **tab)
 {
-	t_stack	*tmp;
+	int	i;
+	int	j;
 
-	tmp = lst;
-	while (lst)
+	i = 1;
+	j = 0;
+	while (tab[i])
 	{
-		if (tmp->number > INT_MAX || tmp->number < INT_MIN)
+		j = 0;
+		while(tab[i][j])
 		{
-			ft_lstclear(&lst);
-			return (1);
+			if (!ft_isdigit(tab[i][j]))
+				error(2, "push_swap only takes integers as argument.\n");
+			j++;
 		}
-		lst = lst->next;
+		i++;
 	}
-	return (0);
-}
+}	

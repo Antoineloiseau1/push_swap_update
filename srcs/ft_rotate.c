@@ -6,13 +6,13 @@
 /*   By: anloisea <anloisea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 14:36:16 by anloisea          #+#    #+#             */
-/*   Updated: 2022/05/09 15:52:22 by anloisea         ###   ########.fr       */
+/*   Updated: 2022/05/11 16:39:47 by anloisea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_rotate_a(t_stack **a)
+void	rotate_a(t_stack **a)
 {
 	t_stack	*tmp;
 	t_stack	*rotate;
@@ -29,7 +29,7 @@ void	ft_rotate_a(t_stack **a)
 	ft_printf("ra\n");
 }
 
-void	ft_rotate_b(t_stack **b)
+void	rotate_b(t_stack **b)
 {
 	t_stack	*tmp;
 	t_stack	*rotate;
@@ -46,7 +46,7 @@ void	ft_rotate_b(t_stack **b)
 	ft_printf("rb\n");
 }
 
-void	ft_rotate_r(t_stack **a, t_stack **b)
+void	rotate_r(t_stack **a, t_stack **b)
 {
 	t_stack	*tmp_a;
 	t_stack	*tmp_b;

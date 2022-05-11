@@ -1,36 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdouble.c                                      :+:      :+:    :+:   */
+/*   check_limits.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anloisea <anloisea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/10 11:23:27 by anloisea          #+#    #+#             */
-/*   Updated: 2022/05/10 17:20:02 by anloisea         ###   ########.fr       */
+/*   Created: 2022/05/10 17:21:49 by anloisea          #+#    #+#             */
+/*   Updated: 2022/05/11 15:07:47 by anloisea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_isdouble(t_stack *lst)
+void	check_limits(t_stack *lst)
 {
-	t_stack	*i;
-	t_stack	*j;
+	t_stack	*tmp;
 
-	i = lst;
-	while (i != NULL && i->next != NULL)
+	tmp = lst;
+	while (lst)
 	{
-		j = i->next;
-		while (j)
+		if (tmp->number > 2147483647 && tmp->number < -2147483648)
 		{
-			if (j->number == i->number)
-			{
-				ft_lstclear(&lst);
-				return (1);
-			}
-			j = j->next;
+			ft_lstclear(&lst);
+			error(4, "some values are off limits, please use integers.\n");
 		}
-		i = i->next;
+		lst = lst->next;
 	}
-	return (0);
 }

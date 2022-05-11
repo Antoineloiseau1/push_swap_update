@@ -6,13 +6,13 @@
 /*   By: anloisea <anloisea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 12:48:55 by anloisea          #+#    #+#             */
-/*   Updated: 2022/05/09 17:42:59 by anloisea         ###   ########.fr       */
+/*   Updated: 2022/05/11 14:51:43 by anloisea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_displaylst(t_stack *a, t_stack *b)
+void	display_lst(t_stack *a, t_stack *b)
 {
 	t_stack	*tmp_a;
 	t_stack	*tmp_b;
