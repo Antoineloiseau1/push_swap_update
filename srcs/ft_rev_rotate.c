@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_rev_rotate.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anloisea <anloisea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 15:54:18 by anloisea          #+#    #+#             */
-/*   Updated: 2022/05/11 16:40:03 by anloisea         ###   ########.fr       */
+/*   Updated: 2022/05/13 10:03:52 by antoine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,15 @@
 void	rev_rotate_a(t_stack **a)
 {
 	t_stack	*tmp;
+	t_stack	*end;
 
 	tmp = *a;
-	if (!tmp || !tmp->next)
-		return ;
 	while (tmp->next->next)
 		tmp = tmp->next;
-	tmp->next->next = *a;
-	*a = tmp->next;
+	end = tmp->next;
+	end->next = *a;
 	tmp->next = NULL;
+	*a = end;
 	ft_printf("rra\n");
 }
 
