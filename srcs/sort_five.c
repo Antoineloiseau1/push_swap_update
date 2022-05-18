@@ -1,35 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   sort_five.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/07 12:19:25 by anloisea          #+#    #+#             */
-/*   Updated: 2022/05/17 11:17:47 by antoine          ###   ########.fr       */
+/*   Created: 2022/05/17 10:16:41 by antoine           #+#    #+#             */
+/*   Updated: 2022/05/17 10:23:08 by antoine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
-{	
-	t_stack	*a;
-	//t_stack	*b;
+t_stack	*sort_five(t_stack *a, t_stack *b)
+{
+	//find smallest
+	//push it on b
+	// find second smallest
+	//push it on b, 
+	// sort three,
+	// push on a twice
 
-	//b = NULL;
-	if (argc < 2)
-		error(1, "push_swap takes at least 1 argument or two integers.\n");
-	a = parse(argv);
-	if (is_sorted(a))
-		return (0);
-	create_index(a);
-/* 	 if (lst_len(a) == 3)
-		a = sort_three(a);
-	else if (lst_len(a) == 5)
-		a = sort_five(a, b);
-	
-	display_lst(a, a);
-	free(a); */
-	return (0);
+	return (a);
 }
+
+1 2 3 4 5
+5 1 2 3 4
+4 5 1 2 3
+3 4 5 1 2
+2 3 4 5 1

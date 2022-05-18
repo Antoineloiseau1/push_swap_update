@@ -6,7 +6,7 @@
 /*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 17:10:13 by anloisea          #+#    #+#             */
-/*   Updated: 2022/05/12 19:15:14 by antoine          ###   ########.fr       */
+/*   Updated: 2022/05/17 11:41:18 by antoine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,51 +14,28 @@
 
 void	create_index(t_stack *lst)
 {
-	t_stack	*tmp;
-	t_stack	*buf;
-	int		i;
-	int 	current;
-	int 	lowest;
-	int		times = 9;
+	t_stack	*i;
+	t_stack *j;
+	t_stack	*head;
 
-	i = 1;
-	tmp = lst;
-	lowest = tmp->number;
-	while (tmp)
+	head = lst;
+	display_lst(head, lst);
+	i = head;
+	//tri la liste temporaire, attribu un indice
+	while (i->next)
 	{
-		if (tmp->number < lowest)
+		j = i->next;
+		while (j)
 		{
-			lowest = tmp->number;
-			buf = tmp;
-		}
-		tmp = tmp->next;
-	}
-	buf->index = i;
-	lowest++;
-	i++;
-	while (times--)
-	{
-		tmp = lst;
-		current = tmp->number;
-		while(tmp)
-		{
-			if (tmp->number >= lowest && tmp->number <= current)
+			if (i->number > j->number)
 			{
-				current = tmp->number;
-				buf = tmp;
+				i->next = j->next;
+				j->next = head;
+				head = j;
 			}
-			tmp = tmp->next;
+			j = j->next;
 		}
-		lowest = buf->number;
-		buf->index = i;
-		ft_printf("lowest = %d, his buff has index = %d\n", lowest, buf->index);
-		ft_printf("times = %d\n", times);
-		lowest++;
-		i++;
+		i = i->next;
 	}
-/* 	while (lst)
-	{
-		ft_printf("value = %d\nindex = %d\n", lst->number, lst->index);
-	 	lst = lst->next;
-	} */
+	display_lst(head, lst);
 }

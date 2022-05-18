@@ -6,7 +6,7 @@
 /*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 17:32:31 by anloisea          #+#    #+#             */
-/*   Updated: 2022/05/13 09:05:00 by antoine          ###   ########.fr       */
+/*   Updated: 2022/05/17 10:10:45 by antoine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void		check_limits(t_stack *lst);
 long int	ft_atoi(const char *str);
 void		create_index(t_stack *lst);
 int			lst_len(t_stack *lst);
-void        sort_three(t_stack *a);
+t_stack		*sort_three(t_stack *a);
 int         is_sorted(t_stack *a);
 
 // Swap functions:

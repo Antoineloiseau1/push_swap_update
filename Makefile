@@ -6,7 +6,7 @@
 #    By: antoine <antoine@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/02 17:24:39 by anloisea          #+#    #+#              #
-#    Updated: 2022/05/12 20:33:16 by antoine          ###   ########.fr        #
+#    Updated: 2022/05/17 09:54:02 by antoine          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,7 +38,7 @@ OBJS	= 		${SRCS:.c=.o}
 
 HDR		= push_swap.h
 CFLAGS	= -Wall -Wextra -Werror
-CC		= cc
+CC		= cc -g
 PRINTF	= ./ft_printf/
 LIB 	= libprintf.a
 
