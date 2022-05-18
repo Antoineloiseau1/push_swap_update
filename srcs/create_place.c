@@ -6,7 +6,7 @@
 /*   By: anloisea <anloisea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 13:00:12 by anloisea          #+#    #+#             */
-/*   Updated: 2022/05/18 14:15:41 by anloisea         ###   ########.fr       */
+/*   Updated: 2022/05/18 17:00:19 by anloisea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@ int	find_next_lower(int lower, int place, t_stack *stack)
 	int	next;
 	t_stack	*tmp;
 
-	tmp = NULL;
+	tmp = stack;
+	while (stack && stack->number <= lower)
+		stack = stack->next;
 	next = stack->number;
 	while (stack)
 	{
@@ -38,7 +40,7 @@ int	find_lower(t_stack *stack)
 	int	lower;
 
 	lower = stack->number;
-	tmp = NULL;
+	tmp = stack;
 	while (stack)
 	{
 		if (stack->number < lower)
@@ -63,8 +65,15 @@ void	create_place(t_stack *stack)
 	len = lst_len(stack);
 	while (i < len)
 	{
-		ft_printf("lower = %d\n", lower);
 		lower = find_next_lower(lower, i, stack);
 		i++;
+	}
+	while (stack)
+	{
+		ft_printf("number is %d\n", stack->number);
+		ft_printf("his place is %d\n", stack->place);
+		ft_printf("his index is %d\n", stack->index);
+		stack = stack->next;
+		
 	}
 }
