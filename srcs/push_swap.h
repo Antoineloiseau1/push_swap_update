@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
+/*   By: anloisea <anloisea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 17:32:31 by anloisea          #+#    #+#             */
-/*   Updated: 2022/05/17 10:10:45 by antoine          ###   ########.fr       */
+/*   Updated: 2022/05/18 14:10:49 by anloisea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,13 @@ void		clear_split(char **split);
 void		check_for_char(char **tab);
 void		check_limits(t_stack *lst);
 long int	ft_atoi(const char *str);
-void		create_index(t_stack *lst);
+void		update_index(t_stack *lst);
 int			lst_len(t_stack *lst);
 t_stack		*sort_three(t_stack *a);
 int         is_sorted(t_stack *a);
+int			find_lower(t_stack *stack);
+void		create_place(t_stack *stack);
+int			find_next_lower(int lower, int place, t_stack *stack);
 
 // Swap functions:
 void		swap_a(t_stack *a);

@@ -1,41 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   create_index.c                                     :+:      :+:    :+:   */
+/*   update_index.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
+/*   By: anloisea <anloisea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 17:10:13 by anloisea          #+#    #+#             */
-/*   Updated: 2022/05/17 11:41:18 by antoine          ###   ########.fr       */
+/*   Updated: 2022/05/18 12:52:49 by anloisea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+// this function updates indexes on stacks
+
 #include "push_swap.h"
 
-void	create_index(t_stack *lst)
+void	update_index(t_stack *stack)
 {
-	t_stack	*i;
-	t_stack *j;
-	t_stack	*head;
+	int	i;
 
-	head = lst;
-	display_lst(head, lst);
-	i = head;
-	//tri la liste temporaire, attribu un indice
-	while (i->next)
+	i = 0;
+	while (stack)
 	{
-		j = i->next;
-		while (j)
-		{
-			if (i->number > j->number)
-			{
-				i->next = j->next;
-				j->next = head;
-				head = j;
-			}
-			j = j->next;
-		}
-		i = i->next;
+		stack->index = i;
+		stack = stack->next;
+		i++;
 	}
-	display_lst(head, lst);
 }

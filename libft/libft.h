@@ -6,7 +6,7 @@
 /*   By: anloisea <anloisea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 09:44:30 by anloisea          #+#    #+#             */
-/*   Updated: 2022/05/11 17:09:53 by anloisea         ###   ########.fr       */
+/*   Updated: 2022/05/18 13:09:56 by anloisea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ typedef struct s_stack
 {
 	int				number;
 	int				index;
+	int				place;
 	struct s_stack	*next;
 }					t_stack;
 

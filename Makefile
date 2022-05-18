@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: antoine <antoine@student.42.fr>            +#+  +:+       +#+         #
+#    By: anloisea <anloisea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/02 17:24:39 by anloisea          #+#    #+#              #
-#    Updated: 2022/05/17 09:54:02 by antoine          ###   ########.fr        #
+#    Updated: 2022/05/18 13:09:42 by anloisea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,10 +29,11 @@ SRCS		= 	./srcs/push_swap.c \
 				./srcs/parse.c \
 				./srcs/clear_split.c \
 				./libft/ft_isdigit.c \
-				./srcs/create_index.c \
+				./srcs/update_index.c \
 				./srcs/lst_len.c \
 				./srcs/is_sorted.c \
-				./srcs/sort_three.c
+				./srcs/sort_three.c \
+				./srcs/create_place.c
 			
 OBJS	= 		${SRCS:.c=.o}
 

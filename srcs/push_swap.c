@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
+/*   By: anloisea <anloisea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/07 12:19:25 by anloisea          #+#    #+#             */
-/*   Updated: 2022/05/17 11:17:47 by antoine          ###   ########.fr       */
+/*   Updated: 2022/05/18 13:09:19 by anloisea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,19 @@ int	main(int argc, char **argv)
 	a = parse(argv);
 	if (is_sorted(a))
 		return (0);
-	create_index(a);
-/* 	 if (lst_len(a) == 3)
+	update_index(a);
+	create_place(a);
+		 if (lst_len(a) == 3)
 		a = sort_three(a);
-	else if (lst_len(a) == 5)
-		a = sort_five(a, b);
+	// else if (lst_len(a) == 5)
+	// 	a = sort_five(a, b);
 	
 	display_lst(a, a);
-	free(a); */
+	while (a)
+	{
+		ft_printf("%d\n", a->index);
+		a = a->next;
+	}
+	free(a); 
 	return (0);
 }
