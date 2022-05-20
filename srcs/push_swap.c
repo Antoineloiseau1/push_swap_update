@@ -6,7 +6,7 @@
 /*   By: anloisea <anloisea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/07 12:19:25 by anloisea          #+#    #+#             */
-/*   Updated: 2022/05/18 13:09:19 by anloisea         ###   ########.fr       */
+/*   Updated: 2022/05/20 12:56:56 by anloisea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,7 @@ int	main(int argc, char **argv)
 	// else if (lst_len(a) == 5)
 	// 	a = sort_five(a, b);
 	
-	display_lst(a, a);
-	while (a)
-	{
-		ft_printf("%d\n", a->index);
-		a = a->next;
-	}
+	//display_lst(a, a);
 	free(a); 
 	return (0);
 }
