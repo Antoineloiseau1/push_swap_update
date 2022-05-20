@@ -6,66 +6,84 @@
 /*   By: anloisea <anloisea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 13:00:12 by anloisea          #+#    #+#             */
-/*   Updated: 2022/05/20 12:59:30 by anloisea         ###   ########.fr       */
+/*   Updated: 2022/05/20 13:49:05 by anloisea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	find_next_lower(int lower, int place, t_stack *stack)
+int	find_next_lowest(int lowest, int place, t_stack *stack)
 {
-	int	next_lower;
+	int	next_lowest
+;
 	t_stack	*tmp;
 
 	tmp = stack;
-	while (stack && stack->number <= lower)
+	while (stack && stack->number <= lowest
+)
 		stack = stack->next;
-	next_lower = stack->number;
+	next_lowest
+ = stack->number;
 	while (stack)
 	{
-		if (stack->number < next_lower && stack->number > lower)
+		if (stack->number < next_lowest
+	 && stack->number > lowest
+	)
 		{
-			next_lower = stack->number;
+			next_lowest
+		 = stack->number;
 			tmp = stack;
 		}
 		stack = stack->next;
 	}
 	tmp->place = place;
-	return (next_lower);
+	return (next_lowest
+);
 }
 
-int	find_lower(t_stack *stack)
+int	find_lowest(t_stack *stack)
 {
 	t_stack	*tmp;
-	int	lower;
+	int	lowest
+;
 
-	lower = stack->number;
+	lowest
+ = stack->number;
 	tmp = stack;
 	while (stack)
 	{
-		if (stack->number < lower)
+		if (stack->number < lowest
+	)
 		{
-			lower = stack->number;
+			lowest
+		 = stack->number;
 			tmp = stack;
 		}
 		stack = stack->next;
 	}
 	tmp->place = 0;
-	return (lower);
+	return (lowest
+);
 }
 
 void	create_place(t_stack *stack)
 {
-	int	lower;
+	int	lowest
+;
 	int	i;
 	int	len;
 	
-	lower = find_lower(stack);
+	lowest
+ = find_lowest
+(stack);
 	i = 1;
 	len = lst_len(stack);
 	while (i < len)
 	{
-		lower = find_next_lower(lower, i, stack);
+		lowest
+	 = find_next_lowest
+	(lowest
+	, i, stack);
 		i++;
 	}
 }

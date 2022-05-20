@@ -6,7 +6,7 @@
 /*   By: anloisea <anloisea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/07 12:19:25 by anloisea          #+#    #+#             */
-/*   Updated: 2022/05/20 12:56:56 by anloisea         ###   ########.fr       */
+/*   Updated: 2022/05/20 15:55:51 by anloisea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 int	main(int argc, char **argv)
 {	
 	t_stack	*a;
-	//t_stack	*b;
+	t_stack	*b;
 
-	//b = NULL;
+	b = NULL;
 	if (argc < 2)
 		error(1, "push_swap takes at least 1 argument or two integers.\n");
 	a = parse(argv);
@@ -25,12 +25,17 @@ int	main(int argc, char **argv)
 		return (0);
 	update_index(a);
 	create_place(a);
-		 if (lst_len(a) == 3)
+	if (lst_len(a) == 2 && a->number > a->next->number)
+		swap_a(a);
+	else if (lst_len(a) == 3)
 		a = sort_three(a);
-	// else if (lst_len(a) == 5)
-	// 	a = sort_five(a, b);
+	else if (lst_len(a) <= 5)
+		a = sort_five(a, b);
+	// else
+	// 	sort();
 	
-	//display_lst(a, a);
-	free(a); 
+	// display_lst(a, b);
+	ft_lstclear(&a);
+	//system("leaks push_swap");
 	return (0);
 }

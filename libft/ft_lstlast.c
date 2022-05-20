@@ -1,26 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lst_len.c                                          :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anloisea <anloisea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/11 18:16:09 by anloisea          #+#    #+#             */
-/*   Updated: 2022/05/11 18:17:53 by anloisea         ###   ########.fr       */
+/*   Created: 2022/03/25 17:35:42 by anloisea          #+#    #+#             */
+/*   Updated: 2022/05/20 14:32:30 by anloisea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	lst_len(t_stack *lst)
+t_stack	*ft_lstlast(t_stack *lst)
 {
-	int	i;
-
-	i = 0;
-	while(lst)
-	{
-		i++;
+	while (lst && lst->next != NULL)
 		lst = lst->next;
-	}
-	return (i);
+	return (lst);
 }

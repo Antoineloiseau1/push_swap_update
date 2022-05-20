@@ -6,7 +6,7 @@
 /*   By: anloisea <anloisea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 17:32:31 by anloisea          #+#    #+#             */
-/*   Updated: 2022/05/18 14:10:49 by anloisea         ###   ########.fr       */
+/*   Updated: 2022/05/20 14:55:54 by anloisea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,21 +19,35 @@
 # include "../ft_printf/ft_printf.h"
 # include <limits.h>
 
-void		display_lst(t_stack *a, t_stack *b);
-void		error(int err_no, char *text);
+
+
+//Indexing:
+
+int			find_lowest(t_stack *stack);
+void		create_place(t_stack *stack);
+int			find_next_lowest(int lowest, int place, t_stack *stack);
+void		update_index(t_stack *lst);
+
+//parsing:
+
 t_stack		*parse(char **args);
 void		check_double(t_stack *lst);
 void		clear_split(char **split);
 void		check_for_char(char **tab);
 void		check_limits(t_stack *lst);
 long int	ft_atoi(const char *str);
-void		update_index(t_stack *lst);
+
+//utils:
+
 int			lst_len(t_stack *lst);
-t_stack		*sort_three(t_stack *a);
 int         is_sorted(t_stack *a);
-int			find_lower(t_stack *stack);
-void		create_place(t_stack *stack);
-int			find_next_lower(int lower, int place, t_stack *stack);
+void		error(int err_no, char *text);
+void		display_lst(t_stack *a, t_stack *b);
+
+//sort functions:
+t_stack		*sort_five(t_stack *a, t_stack *b);
+int			find_lowest_index(t_stack *lst);
+t_stack		*sort_three(t_stack *a);
 
 // Swap functions:
 void		swap_a(t_stack *a);

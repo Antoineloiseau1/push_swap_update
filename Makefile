@@ -6,7 +6,7 @@
 #    By: anloisea <anloisea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/02 17:24:39 by anloisea          #+#    #+#              #
-#    Updated: 2022/05/18 13:09:42 by anloisea         ###   ########.fr        #
+#    Updated: 2022/05/20 16:07:03 by anloisea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,18 +22,16 @@ SRCS		= 	./srcs/push_swap.c \
 				./srcs/ft_push.c \
 				./srcs/ft_rotate.c \
 				./srcs/ft_rev_rotate.c \
-				./srcs/error.c \
 				./libft/ft_split.c \
 				./srcs/check_for_char.c \
 				./srcs/check_double.c \
 				./srcs/parse.c \
-				./srcs/clear_split.c \
 				./libft/ft_isdigit.c \
-				./srcs/update_index.c \
-				./srcs/lst_len.c \
-				./srcs/is_sorted.c \
+				./srcs/utils.c\
 				./srcs/sort_three.c \
-				./srcs/create_place.c
+				./srcs/create_place.c \
+				./srcs/sort_five.c \
+				./libft/ft_lstlast.c
 			
 OBJS	= 		${SRCS:.c=.o}
 

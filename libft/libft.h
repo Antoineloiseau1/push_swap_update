@@ -6,7 +6,7 @@
 /*   By: anloisea <anloisea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 09:44:30 by anloisea          #+#    #+#             */
-/*   Updated: 2022/05/18 13:09:56 by anloisea         ###   ########.fr       */
+/*   Updated: 2022/05/20 14:32:21 by anloisea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,6 @@ void		ft_lstadd_back(t_stack **lst, t_stack *new);
 void		ft_lstclear(t_stack **lst);
 char		**ft_split(const char *s, char c);
 int			ft_isdigit(int c);
+t_stack		*ft_lstlast(t_stack *lst);
 
 #endif

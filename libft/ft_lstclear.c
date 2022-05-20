@@ -6,7 +6,7 @@
 /*   By: anloisea <anloisea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/25 19:04:16 by anloisea          #+#    #+#             */
-/*   Updated: 2022/05/09 11:14:58 by anloisea         ###   ########.fr       */
+/*   Updated: 2022/05/20 16:04:42 by anloisea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,12 @@ void	ft_lstclear(t_stack **lst)
 	tmp = *lst;
 	while (tmp && tmp->next)
 	{
-		tmp = *lst;
 		*lst = tmp->next;
 		free(tmp);
+		tmp = *lst;
 	}
+	if (tmp)
+		free(tmp);
 	lst = NULL;
 	free(lst);
 }
