@@ -6,7 +6,7 @@
 #    By: anloisea <anloisea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/02 17:24:39 by anloisea          #+#    #+#              #
-#    Updated: 2022/05/20 16:07:03 by anloisea         ###   ########.fr        #
+#    Updated: 2022/05/20 18:23:55 by anloisea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,8 @@ SRCS		= 	./srcs/push_swap.c \
 				./srcs/sort_three.c \
 				./srcs/create_place.c \
 				./srcs/sort_five.c \
-				./libft/ft_lstlast.c
+				./libft/ft_lstlast.c \
+				./srcs/create_binaries.c
 			
 OBJS	= 		${SRCS:.c=.o}
 

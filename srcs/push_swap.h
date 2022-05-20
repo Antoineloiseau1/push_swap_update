@@ -6,7 +6,7 @@
 /*   By: anloisea <anloisea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 17:32:31 by anloisea          #+#    #+#             */
-/*   Updated: 2022/05/20 14:55:54 by anloisea         ###   ########.fr       */
+/*   Updated: 2022/05/20 18:23:35 by anloisea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,10 @@
 # include "../ft_printf/ft_printf.h"
 # include <limits.h>
 
-
+// create binary:
+int	bin_size(int nb);
+char	*itao_b(int nb);
+void	create_binaries(t_stack *stack);
 
 //Indexing:
 
