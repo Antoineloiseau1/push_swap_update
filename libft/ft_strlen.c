@@ -1,32 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_double.c                                     :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anloisea <anloisea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/10 11:23:27 by anloisea          #+#    #+#             */
-/*   Updated: 2022/09/16 14:55:54 by anloisea         ###   ########.fr       */
+/*   Created: 2022/03/21 09:38:25 by anloisea          #+#    #+#             */
+/*   Updated: 2022/09/09 16:49:19 by anloisea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	check_double(t_stack *lst)
+size_t	ft_strlen(const char *s)
 {
-	t_stack	*i;
-	t_stack	*j;
+	int	i;
 
-	i = lst;
-	while (i != NULL && i->next != NULL)
-	{
-		j = i->next;
-		while (j != NULL)
-		{
-			if (j->number == i->number)
-				error(3, "duplicated numbers in arguments");
-			j = j->next;
-		}
-		i = i->next;
-	}
+	if (!s)
+		return (0);
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
 }

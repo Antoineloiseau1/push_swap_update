@@ -1,30 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   ft_read_fd.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anloisea <anloisea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/25 19:04:16 by anloisea          #+#    #+#             */
-/*   Updated: 2022/05/20 16:04:42 by anloisea         ###   ########.fr       */
+/*   Created: 2022/09/09 16:41:29 by anloisea          #+#    #+#             */
+/*   Updated: 2022/09/15 14:29:43 by anloisea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstclear(t_stack **lst)
+void	ft_read_fd(int fd)
 {
-	t_stack	*tmp;
+	char	*file;
 
-	tmp = *lst;
-	while (tmp && tmp->next)
+	file = "";
+	while (file)
 	{
-		*lst = tmp->next;
-		free(tmp);
-		tmp = *lst;
+		file = get_next_line(fd);
+		ft_printf(file);
 	}
-	if (tmp)
-		free(tmp);
-	lst = NULL;
-	free(lst);
 }

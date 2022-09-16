@@ -1,28 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anloisea <anloisea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/25 17:38:56 by anloisea          #+#    #+#             */
-/*   Updated: 2022/05/10 12:53:00 by anloisea         ###   ########.fr       */
+/*   Created: 2022/03/25 16:56:30 by anloisea          #+#    #+#             */
+/*   Updated: 2022/09/16 14:51:06 by anloisea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_back(t_stack **lst, t_stack *new)
-{
-	t_stack	*tmp;
+t_stack	*ft_lstnew(int number)
+{	
+	t_stack	*new;
 
-	tmp = *lst;
-	if (*lst == NULL)
-	{
-		*lst = new;
-		return ;
-	}
-	while (tmp && tmp->next)
-		tmp = tmp->next;
-	tmp->next = new;
+	new = malloc(sizeof(t_stack));
+	if (new == NULL)
+		return (NULL);
+	new->number = number;
+	new->next = NULL;
+	return (new);
 }

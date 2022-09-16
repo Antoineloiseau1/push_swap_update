@@ -6,7 +6,7 @@
 /*   By: anloisea <anloisea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 14:04:27 by anloisea          #+#    #+#             */
-/*   Updated: 2022/05/20 15:07:57 by anloisea         ###   ########.fr       */
+/*   Updated: 2022/09/16 14:59:51 by anloisea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,39 +38,36 @@ int is_sorted(t_stack *a)
     return (1);
 }
 
-int	lst_len(t_stack *lst)
-{
-	int	i;
+// int	lst_len(t_stack *lst)
+// {
+// 	int	i;
 
-	i = 0;
-	while(lst)
-	{
-		i++;
-		lst = lst->next;
-	}
-	return (i);
-}
+// 	i = 0;
+// 	while(lst)
+// 	{
+// 		i++;
+// 		lst = lst->next;
+// 	}
+// 	return (i);
+// }
 
-void	update_index(t_stack *stack)
-{
-	int	i;
+// void	update_index(t_stack *stack)
+// {
+// 	int	i;
 
-	i = 0;
-	while (stack)
-	{
-		stack->index = i;
-		stack = stack->next;
-		i++;
-	}
-}
+// 	i = 0;
+// 	while (stack)
+// 	{
+// 		stack->index = i;
+// 		stack = stack->next;
+// 		i++;
+// 	}
+// }
 
 void	error(int err_no, char *text)
 {
-	err_no += 48;
-	write(2, "Error ", 7);
-	write(2, &err_no, 1);
-	write(2, ": ", 2);
-	write(2, text, ft_strlen(text));
-	system("leaks push_swap");
-	exit (err_no - 48);
+	ft_putstr_fd("push_swap: ", 2);
+	ft_putstr_fd(text, 2);
+	ft_putstr_fd("\n", 2);
+	exit (err_no);
 }

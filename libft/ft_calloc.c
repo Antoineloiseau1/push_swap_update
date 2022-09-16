@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anloisea <anloisea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: anloisea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/25 16:59:05 by anloisea          #+#    #+#             */
-/*   Updated: 2022/05/09 11:05:38 by anloisea         ###   ########.fr       */
+/*   Created: 2022/03/21 17:01:59 by anloisea          #+#    #+#             */
+/*   Updated: 2022/03/26 17:26:02 by anloisea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
 
-void	ft_lstadd_front(t_stack **lst, t_stack *new)
+void	*ft_calloc(size_t count, size_t size)
 {
-	if (!*lst)
-		*lst = new;
-	else
-	{	
-		new->next = *lst;
-		*lst = new;
+	char	*ptr;
+
+	ptr = malloc(count * size);
+	if (!ptr)
+	{
+		errno = ENOMEM;
+		return (NULL);
 	}
+	ft_memset(ptr, 0, (size * count));
+	return (ptr);
 }

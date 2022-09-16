@@ -1,41 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parse.c                                            :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anloisea <anloisea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/10 11:30:43 by anloisea          #+#    #+#             */
-/*   Updated: 2022/09/16 14:59:10 by anloisea         ###   ########.fr       */
+/*   Created: 2022/03/21 15:19:10 by anloisea          #+#    #+#             */
+/*   Updated: 2022/04/01 17:04:17 by anloisea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-t_stack	*parse(char *argv[])
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	t_stack	*a;
-	char	**tmp;
-	int		i;
-	int		j;
+	const char	*tmp_s;
+	char		*tmp_d;
+	size_t		i;
 
-	i = 1;
-	a = NULL;
-	check_for_char(argv);
-	while (argv[i])
-	{
-		tmp = ft_split(argv[i], ' ');
-		j = 0;
-		while (tmp[j])
+	if (!dst && !src)
+		return (NULL);
+	tmp_s = src;
+	tmp_d = dst;
+	i = 0;
+	if (tmp_d < tmp_s)
+	{	
+		while (len > 0)
 		{
-	 		ft_lstadd_back(&a, ft_lstnew(ft_atoi(tmp[j])));
-			j++;
+			tmp_d[i] = tmp_s[i];
+			len--;
+			i++;
 		}
-	 	clear_split(tmp);
-		i++;
 	}
-	check_double(a);
-	if (a->next == NULL)
-		error(-1, "usage: nb1 nb2 [...] else \"nb1 nb2 [...]\"");
-	return (a);
+	while (len > 0)
+	{
+		tmp_d[len - 1] = tmp_s[len - 1];
+		len--;
+	}
+	return (dst);
 }

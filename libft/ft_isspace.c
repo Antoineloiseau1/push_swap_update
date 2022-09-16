@@ -1,32 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_double.c                                     :+:      :+:    :+:   */
+/*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anloisea <anloisea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/10 11:23:27 by anloisea          #+#    #+#             */
-/*   Updated: 2022/09/16 14:55:54 by anloisea         ###   ########.fr       */
+/*   Created: 2022/09/16 13:39:46 by anloisea          #+#    #+#             */
+/*   Updated: 2022/09/16 13:42:18 by anloisea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	check_double(t_stack *lst)
+int	ft_isspace(int c)
 {
-	t_stack	*i;
-	t_stack	*j;
-
-	i = lst;
-	while (i != NULL && i->next != NULL)
-	{
-		j = i->next;
-		while (j != NULL)
-		{
-			if (j->number == i->number)
-				error(3, "duplicated numbers in arguments");
-			j = j->next;
-		}
-		i = i->next;
-	}
+	if (c == '\t' || c == '\n' || c == '\r')
+		return (c);
+	else if (c == '\v' || c == '\f' || c == ' ')
+		return (c);
+	else
+		return (0);
 }

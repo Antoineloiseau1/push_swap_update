@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_double.c                                     :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anloisea <anloisea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/10 11:23:27 by anloisea          #+#    #+#             */
-/*   Updated: 2022/09/16 14:55:54 by anloisea         ###   ########.fr       */
+/*   Created: 2022/03/21 17:21:52 by anloisea          #+#    #+#             */
+/*   Updated: 2022/09/07 10:25:46 by anloisea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	check_double(t_stack *lst)
+char	*ft_strtrim(const char *s1, const char *set)
 {
-	t_stack	*i;
-	t_stack	*j;
+	size_t	i;
 
-	i = lst;
-	while (i != NULL && i->next != NULL)
-	{
-		j = i->next;
-		while (j != NULL)
-		{
-			if (j->number == i->number)
-				error(3, "duplicated numbers in arguments");
-			j = j->next;
-		}
-		i = i->next;
-	}
+	if (!s1 || !set)
+		return (NULL);
+	while (ft_strchr(set, *s1) && *s1)
+		s1++;
+	i = ft_strlen(s1);
+	while (ft_strchr(set, s1[i]) && i > 0)
+		i--;
+	return (ft_substr(s1, 0, i + 1));
 }

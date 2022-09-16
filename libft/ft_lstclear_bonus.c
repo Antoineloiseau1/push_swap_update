@@ -1,32 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_double.c                                     :+:      :+:    :+:   */
+/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anloisea <anloisea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/10 11:23:27 by anloisea          #+#    #+#             */
-/*   Updated: 2022/09/16 14:55:54 by anloisea         ###   ########.fr       */
+/*   Created: 2022/03/25 19:04:16 by anloisea          #+#    #+#             */
+/*   Updated: 2022/09/16 14:52:07 by anloisea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	check_double(t_stack *lst)
+void	ft_lstclear(t_stack **lst)
 {
-	t_stack	*i;
-	t_stack	*j;
+	t_stack	*tmp;
 
-	i = lst;
-	while (i != NULL && i->next != NULL)
+	tmp = *lst;
+	while (tmp && tmp->next)
 	{
-		j = i->next;
-		while (j != NULL)
-		{
-			if (j->number == i->number)
-				error(3, "duplicated numbers in arguments");
-			j = j->next;
-		}
-		i = i->next;
+		tmp = *lst;
+		*lst = tmp->next;
+		free(tmp);
 	}
+	lst = NULL;
+	free(lst);
 }

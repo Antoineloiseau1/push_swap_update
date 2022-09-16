@@ -6,7 +6,7 @@
 /*   By: anloisea <anloisea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 17:24:13 by anloisea          #+#    #+#             */
-/*   Updated: 2022/05/10 18:43:41 by anloisea         ###   ########.fr       */
+/*   Updated: 2022/09/07 10:37:17 by anloisea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,22 +20,22 @@ static	int	ft_checkset(char c, char set)
 		return (0);
 }
 
-static char	*ft_strcut(const char *s, const char *temp)
+static char	*ft_copy_buffer(const char *s, const char *buff)
 {
 	int		size;
 	char	*dup;
 	int		i;
 
-	size = ft_strlen(temp) - ft_strlen(s);
+	size = ft_strlen(buff) - ft_strlen(s);
 	dup = malloc((size + 1) * sizeof(*dup));
 	if (dup == NULL)
 		return (NULL);
 	i = 0;
-	while (temp != s)
+	while (buff != s)
 	{	
-		dup[i] = *temp;
+		dup[i] = *buff;
 		i++;
-		temp++;
+		buff++;
 	}
 	dup[i] = 0;
 	return (dup);
@@ -65,10 +65,8 @@ char	**ft_split(const char *s, char c)
 {
 	char		**split;
 	int			index;
-	const char	*temp;
+	const char	*buff;
 
-	if (s == NULL)
-		return (NULL);
 	split = malloc((ft_count_words(s, c) + 1) * sizeof(char *));
 	if (split == NULL)
 		return (NULL);
@@ -77,10 +75,10 @@ char	**ft_split(const char *s, char c)
 		s++;
 	while (*s)
 	{
-		temp = s;
+		buff = s;
 		while (!ft_checkset(*s, c) && *s)
 			s++;
-		split[index] = ft_strcut(s, temp);
+		split[index] = ft_copy_buffer(s, buff);
 		index++;
 		while (ft_checkset(*s, c) && *s)
 			s++;

@@ -1,41 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parse.c                                            :+:      :+:    :+:   */
+/*   ft_display_tab.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anloisea <anloisea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/10 11:30:43 by anloisea          #+#    #+#             */
-/*   Updated: 2022/09/16 14:59:10 by anloisea         ###   ########.fr       */
+/*   Created: 2022/09/09 15:06:13 by anloisea          #+#    #+#             */
+/*   Updated: 2022/09/09 15:48:34 by anloisea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-t_stack	*parse(char *argv[])
+void	ft_display_tab(char **tab)
 {
-	t_stack	*a;
-	char	**tmp;
-	int		i;
-	int		j;
+	int	i;
 
-	i = 1;
-	a = NULL;
-	check_for_char(argv);
-	while (argv[i])
+	i = 0;
+	while (tab[i])
 	{
-		tmp = ft_split(argv[i], ' ');
-		j = 0;
-		while (tmp[j])
-		{
-	 		ft_lstadd_back(&a, ft_lstnew(ft_atoi(tmp[j])));
-			j++;
-		}
-	 	clear_split(tmp);
+		ft_printf("%s\n", tab[i]);
 		i++;
 	}
-	check_double(a);
-	if (a->next == NULL)
-		error(-1, "usage: nb1 nb2 [...] else \"nb1 nb2 [...]\"");
-	return (a);
 }

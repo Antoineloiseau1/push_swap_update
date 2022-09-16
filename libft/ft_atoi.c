@@ -3,49 +3,40 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
+/*   By: anloisea <anloisea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 16:59:56 by anloisea          #+#    #+#             */
-/*   Updated: 2022/05/12 21:04:30 by antoine          ###   ########.fr       */
+/*   Updated: 2022/09/16 14:50:01 by anloisea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-static int	ft_isspace(char c)
+int	ft_atoi(const char *str)
 {
-	if (c == '\t' || c == '\n' || c == '\r')
-		return (1);
-	else if (c == '\v' || c == '\f' || c == ' ')
-		return (1);
-	else
-		return (0);
-}
+	int	i;
+	int	result;
+	int	minus;
 
-long int	ft_atoi(const char *str)
-{
-	long int	i;
-	long int	result;
-	long int	minus;
-
+	// if (!ft_strncmp("-99999999999999999999999999", str, ft_strlen(str)))
+	// 	return (0);
+	// if (!ft_strncmp("999999999999999999999999999", str, ft_strlen(str)))
+	// 	return (-1);
 	i = 0;
 	result = 0;
 	minus = 1;
 	while (ft_isspace(str[i]))
 		i++;
-	if (str[i] == '-')
+	if (str[i] == '+' || str[i] == '-')
 	{
-		minus *= -1;
+		if (str[i] == '-')
+			minus *= -1;
 		i++;
 	}
-	while (str[i] == '+' || str[i] == '-')
-		i++;
 	while (str[i] >= '0' && str[i] <= '9')
 	{
 		result = (result * 10) + (str[i] - '0');
 		i++;
 	}
-	if (result * minus > INT_MAX || result * minus < INT_MIN)
-		error(4, "some values are off limits, please use integers.\n");
-	return (result * minus);
+	return ((int)result * minus);
 }

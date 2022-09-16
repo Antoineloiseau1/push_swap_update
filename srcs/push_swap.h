@@ -6,7 +6,7 @@
 /*   By: anloisea <anloisea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 17:32:31 by anloisea          #+#    #+#             */
-/*   Updated: 2022/05/20 18:23:35 by anloisea         ###   ########.fr       */
+/*   Updated: 2022/09/16 14:41:10 by anloisea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,23 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include "../libft/libft.h"
-# include "../ft_printf/ft_printf.h"
 # include <limits.h>
 
+
+# ifndef T_STACK
+#  define T_STACK
+typedef struct 		s_stack
+{
+	int				number;
+	int				place;
+	int				index;
+	char			*binary;
+	struct s_stack	*next;
+}					t_stack;
+# endif
+
 // create binary:
-int	bin_size(int nb);
+int		bin_size(int nb);
 char	*itao_b(int nb);
 void	create_binaries(t_stack *stack);
 
@@ -33,12 +45,11 @@ void		update_index(t_stack *lst);
 
 //parsing:
 
-t_stack		*parse(char **args);
+t_stack		*parse(char *argv[]);
 void		check_double(t_stack *lst);
 void		clear_split(char **split);
-void		check_for_char(char **tab);
+void		check_for_char(char *argv[]);
 void		check_limits(t_stack *lst);
-long int	ft_atoi(const char *str);
 
 //utils:
 
@@ -46,6 +57,7 @@ int			lst_len(t_stack *lst);
 int         is_sorted(t_stack *a);
 void		error(int err_no, char *text);
 void		display_lst(t_stack *a, t_stack *b);
+void		display_stack(t_stack *stack);
 
 //sort functions:
 t_stack		*sort_five(t_stack *a, t_stack *b);

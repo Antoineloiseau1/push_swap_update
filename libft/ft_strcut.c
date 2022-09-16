@@ -1,41 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parse.c                                            :+:      :+:    :+:   */
+/*   ft_strcut.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anloisea <anloisea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/10 11:30:43 by anloisea          #+#    #+#             */
-/*   Updated: 2022/09/16 14:59:10 by anloisea         ###   ########.fr       */
+/*   Created: 2022/09/07 10:38:20 by anloisea          #+#    #+#             */
+/*   Updated: 2022/09/07 10:42:48 by anloisea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-t_stack	*parse(char *argv[])
+//Cut string at character and return it.
+
+char	*ft_strcut(char	*str, char c)
 {
-	t_stack	*a;
-	char	**tmp;
+	char	*cut;
 	int		i;
-	int		j;
 
-	i = 1;
-	a = NULL;
-	check_for_char(argv);
-	while (argv[i])
+	i = 0;
+	while (str[i] != c && str[i])
+		i++;
+	cut = malloc(i * sizeof(cut));
+	i = 0;
+	while (str[i] != c && str[i])
 	{
-		tmp = ft_split(argv[i], ' ');
-		j = 0;
-		while (tmp[j])
-		{
-	 		ft_lstadd_back(&a, ft_lstnew(ft_atoi(tmp[j])));
-			j++;
-		}
-	 	clear_split(tmp);
+		cut[i] = str[i];
 		i++;
 	}
-	check_double(a);
-	if (a->next == NULL)
-		error(-1, "usage: nb1 nb2 [...] else \"nb1 nb2 [...]\"");
-	return (a);
+	cut[i] = 0;
+	return (cut);
 }

@@ -1,41 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parse.c                                            :+:      :+:    :+:   */
+/*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anloisea <anloisea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/10 11:30:43 by anloisea          #+#    #+#             */
-/*   Updated: 2022/09/16 14:59:10 by anloisea         ###   ########.fr       */
+/*   Created: 2022/04/13 16:58:00 by anloisea          #+#    #+#             */
+/*   Updated: 2022/09/09 16:57:13 by anloisea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-t_stack	*parse(char *argv[])
+int	ft_is_endline(char *save)
 {
-	t_stack	*a;
-	char	**tmp;
-	int		i;
-	int		j;
+	int	i;
 
-	i = 1;
-	a = NULL;
-	check_for_char(argv);
-	while (argv[i])
+	i = 0;
+	if (!save)
+		return (0);
+	while (save[i])
 	{
-		tmp = ft_split(argv[i], ' ');
-		j = 0;
-		while (tmp[j])
-		{
-	 		ft_lstadd_back(&a, ft_lstnew(ft_atoi(tmp[j])));
-			j++;
-		}
-	 	clear_split(tmp);
+		if (save[i] == '\n')
+			return (1);
 		i++;
 	}
-	check_double(a);
-	if (a->next == NULL)
-		error(-1, "usage: nb1 nb2 [...] else \"nb1 nb2 [...]\"");
-	return (a);
+	return (0);
+}
+
+char	*ft_strdup(const char *str)
+{
+	char	*dup;
+	int		i;
+
+	i = 0;
+	dup = malloc((ft_strlen(str) + 1) * sizeof(*dup));
+	if (!dup)
+		return (NULL);
+	while (str[i])
+	{
+		dup[i] = str[i];
+		i++;
+	}
+	dup[i] = 0;
+	return (dup);
 }

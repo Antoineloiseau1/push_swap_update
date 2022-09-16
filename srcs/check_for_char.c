@@ -6,28 +6,38 @@
 /*   By: anloisea <anloisea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 11:06:45 by anloisea          #+#    #+#             */
-/*   Updated: 2022/05/11 16:54:12 by anloisea         ###   ########.fr       */
+/*   Updated: 2022/09/16 15:17:27 by anloisea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	check_for_char(char **tab)
+void	check_for_char(char *argv[])
 {
 	int	i;
 	int	j;
 
 	i = 1;
 	j = 0;
-	while (tab[i])
+	while (argv[i])
 	{
 		j = 0;
-		while (tab[i][j])
+		while (argv[i][j])
 		{
-			if (!ft_isdigit(tab[i][j]))
-				error(2, "push_swap only takes integers as argument.\n");
+			ft_printf("%c", argv[i][j]);
+			while (ft_isspace(argv[i][j]) && argv[i][j])
+			{
+				ft_printf("%c", argv[i][j]);
+				j++;
+			}
+			if (!ft_isdigit(argv[i][j]) && argv[i][j])
+			{
+				ft_printf("%c", argv[i][j]);
+				error(1, "only takes integers as argument");
+			}
 			j++;
 		}
 		i++;
 	}
+	ft_printf("\n");
 }
