@@ -3,14 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   create_binaries.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anloisea <anloisea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 17:50:08 by anloisea          #+#    #+#             */
-/*   Updated: 2022/05/20 18:29:35 by anloisea         ###   ########.fr       */
+/*   Updated: 2022/09/18 18:49:48 by antoine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	free_binaries(t_stack *stack)
+{
+	while(stack)
+	{
+		//stack->binary = NULL;
+		free(stack->binary);
+		stack = stack->next;
+	}
+}
 
 int	bin_size(int nb)
 {
@@ -38,13 +48,12 @@ char	*itao_b(int nb)
 	result[len] = 0;
 	while (nb > 1)
 	{
-		result[len - 1] = bin[nb % 2];
-		nb /= 2;
 		len--;
+		result[len] = bin[nb % 2];
+		nb /= 2;
 	}
 	len--;
-	result[len - 1] = bin[nb % 2];
-	ft_printf("%s\n", result);
+	result[len] = bin[nb % 2];
 	return (result);
 }
 
@@ -52,7 +61,6 @@ void	create_binaries(t_stack *stack)
 {
 	while (stack)
 	{
-		ft_printf("place  = %d\n", stack->place);
 		stack->binary = itao_b(stack->place);
 		stack = stack->next;
 	}

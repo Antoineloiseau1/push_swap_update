@@ -6,7 +6,7 @@
 /*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/07 12:19:25 by anloisea          #+#    #+#             */
-/*   Updated: 2022/09/18 15:45:13 by antoine          ###   ########.fr       */
+/*   Updated: 2022/09/18 18:49:32 by antoine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	main(int argc, char *argv[])
 		return (EXIT_SUCCESS);
 	update_index(a);
 	create_place(a);
-	// create_binaries(a);
+	create_binaries(a);
 	if (lst_len(a) == 2 && a->number > a->next->number)
 		swap_a(a);
 	else if (lst_len(a) == 3)
@@ -38,6 +38,7 @@ int	main(int argc, char *argv[])
 	// 	radix_sort(a, b);
 	
 	// display_lst(a, b);
+	free_binaries(a);
 	ft_lstclear(&a);
 	
 	return (0);

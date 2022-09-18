@@ -6,7 +6,7 @@
 #    By: antoine <antoine@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/02 17:24:39 by anloisea          #+#    #+#              #
-#    Updated: 2022/09/18 15:18:21 by antoine          ###   ########.fr        #
+#    Updated: 2022/09/18 18:10:10 by antoine          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,8 @@ SRCS		= 	./srcs/push_swap.c \
 				./srcs/ft_rotate.c \
 				./srcs/ft_swap.c \
 				./srcs/sort_three.c \
-				./srcs/sort_five.c
+				./srcs/sort_five.c \
+				./srcs/create_binaries.c
 			
 OBJS	= 		${SRCS:.c=.o}
 

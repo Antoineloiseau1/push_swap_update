@@ -6,7 +6,7 @@
 /*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 13:00:12 by anloisea          #+#    #+#             */
-/*   Updated: 2022/09/18 15:14:16 by antoine          ###   ########.fr       */
+/*   Updated: 2022/09/18 18:39:22 by antoine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int	find_lowest(t_stack *stack)
 		}
 		stack = stack->next;
 	}
-	tmp->place = 0;
+	tmp->place = 1;
 	return (lowest);
 }
 
@@ -61,9 +61,9 @@ void	create_place(t_stack *stack)
 	int	len;
 	
 	lowest = find_lowest(stack);
-	i = 1;
+	i = 2;
 	len = lst_len(stack);
-	while (i < len)
+	while (i < len + 1)
 	{
 		lowest = find_next_lowest(lowest, i, stack);
 		i++;

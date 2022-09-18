@@ -6,7 +6,7 @@
 /*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 17:32:31 by anloisea          #+#    #+#             */
-/*   Updated: 2022/09/18 15:45:51 by antoine          ###   ########.fr       */
+/*   Updated: 2022/09/18 18:49:52 by antoine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ typedef struct 		s_stack
 int		bin_size(int nb);
 char	*itao_b(int nb);
 void	create_binaries(t_stack *stack);
+void	free_binaries(t_stack *stack);
 
 //Indexing:
 
