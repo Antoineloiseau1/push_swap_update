@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_double.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anloisea <anloisea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 11:23:27 by anloisea          #+#    #+#             */
-/*   Updated: 2022/09/16 14:55:54 by anloisea         ###   ########.fr       */
+/*   Updated: 2022/09/18 15:46:45 by antoine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,15 @@ void	check_double(t_stack *lst)
 	t_stack	*j;
 
 	i = lst;
+	if (i == NULL)
+		return ;
 	while (i != NULL && i->next != NULL)
 	{
 		j = i->next;
 		while (j != NULL)
 		{
 			if (j->number == i->number)
-				error(3, "duplicated numbers in arguments");
+				error(3);
 			j = j->next;
 		}
 		i = i->next;

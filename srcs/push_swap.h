@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anloisea <anloisea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 17:32:31 by anloisea          #+#    #+#             */
-/*   Updated: 2022/09/16 14:41:10 by anloisea         ###   ########.fr       */
+/*   Updated: 2022/09/18 15:45:51 by antoine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void		check_limits(t_stack *lst);
 
 int			lst_len(t_stack *lst);
 int         is_sorted(t_stack *a);
-void		error(int err_no, char *text);
+void		error(int err_no);
 void		display_lst(t_stack *a, t_stack *b);
 void		display_stack(t_stack *stack);
 
