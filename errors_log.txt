@@ -1,0 +1,16 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    errors_log.txt                                     :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: antoine <antoine@student.42.fr>            +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/09/20 15:45:05 by antoine           #+#    #+#              #
+#    Updated: 2022/09/20 15:52:24 by antoine          ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+error -1 	= not enough args
+error 4		= dupplicated numbers
+error 3		= out of limits
+error 1		= char error

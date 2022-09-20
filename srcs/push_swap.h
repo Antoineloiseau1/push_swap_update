@@ -6,7 +6,7 @@
 /*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 17:32:31 by anloisea          #+#    #+#             */
-/*   Updated: 2022/09/20 13:11:52 by antoine          ###   ########.fr       */
+/*   Updated: 2022/09/20 16:39:26 by antoine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,8 @@ void	display_stack(t_stack *stack);
 t_stack	*sort_five(t_stack *a, t_stack *b);
 int		find_lowest_index(t_stack *lst);
 t_stack	*sort_three(t_stack *a);
+t_stack	*radix_sort(t_stack *a, t_stack *b);
+size_t	look_for_longest_bin(t_stack *stack);
 
 // Swap functions:
 void	swap_a(t_stack *a);

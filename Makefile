@@ -6,7 +6,7 @@
 #    By: antoine <antoine@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/02 17:24:39 by anloisea          #+#    #+#              #
-#    Updated: 2022/09/20 12:38:25 by antoine          ###   ########.fr        #
+#    Updated: 2022/09/20 16:33:30 by antoine          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,9 @@ SRCS		= 	./srcs/push_swap.c \
 				./srcs/sort_three.c \
 				./srcs/sort_five.c \
 				./srcs/create_binaries.c \
-				./srcs/check_limits.c
+				./srcs/check_limits.c \
+				./srcs/radix_sort.c \
+				./srcs/look_for_longest_bin.c
 			
 OBJS	= 		${SRCS:.c=.o}
 

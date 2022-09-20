@@ -6,7 +6,7 @@
 /*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 11:23:27 by anloisea          #+#    #+#             */
-/*   Updated: 2022/09/18 15:46:45 by antoine          ###   ########.fr       */
+/*   Updated: 2022/09/20 15:55:35 by antoine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	check_double(t_stack *lst)
 		while (j != NULL)
 		{
 			if (j->number == i->number)
-				error(3);
+				error(4);
 			j = j->next;
 		}
 		i = i->next;

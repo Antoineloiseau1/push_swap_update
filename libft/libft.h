@@ -6,7 +6,7 @@
 /*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 09:44:30 by anloisea          #+#    #+#             */
-/*   Updated: 2022/09/20 13:08:25 by antoine          ###   ########.fr       */
+/*   Updated: 2022/09/20 15:11:23 by antoine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,8 @@ typedef struct s_list
 
 # ifndef T_STACK
 #  define T_STACK
-typedef struct 		s_stack
+
+typedef struct s_stack
 {
 	long long		number;
 	int				place;
