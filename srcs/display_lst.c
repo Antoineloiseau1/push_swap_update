@@ -6,7 +6,7 @@
 /*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 12:48:55 by anloisea          #+#    #+#             */
-/*   Updated: 2022/09/18 18:40:22 by antoine          ###   ########.fr       */
+/*   Updated: 2022/09/20 13:17:41 by antoine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	display_stack(t_stack *stack)
 	tmp = stack;
 	while (tmp)
 	{
-		ft_printf("%s\n", tmp->binary);
+		ft_printf("%d\n", tmp->number);
 		tmp = tmp->next;
 	}
 }

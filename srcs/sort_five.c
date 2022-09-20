@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_five.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anloisea <anloisea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 10:16:41 by antoine           #+#    #+#             */
-/*   Updated: 2022/05/20 15:54:26 by anloisea         ###   ########.fr       */
+/*   Updated: 2022/09/20 10:32:04 by antoine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ then checking if lst is equal to 4, sort_three and push_a*/
 
 int	find_lowest_index(t_stack *lst)
 {
-	int lowest;
+	int	lowest;
 	int	index;
 
 	index = lst->index;
@@ -31,9 +31,6 @@ int	find_lowest_index(t_stack *lst)
 		}
 		lst = lst->next;
 	}
-
-
-
 	return (index);
 }
 

@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
+/*   check_limits.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/25 16:56:30 by anloisea          #+#    #+#             */
-/*   Updated: 2022/09/20 13:12:41 by antoine          ###   ########.fr       */
+/*   Created: 2022/09/20 12:34:22 by antoine           #+#    #+#             */
+/*   Updated: 2022/09/20 13:11:21 by antoine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-t_stack	*ft_lstnew(long long number)
-{	
-	t_stack	*new;
+void	check_limits(t_stack *stack)
+{
+	t_stack	*tmp;
 
-	new = malloc(sizeof(t_stack));
-	if (new == NULL)
-		return (NULL);
-	new->number = number;
-	new->next = NULL;
-	return (new);
+	tmp = stack;
+	while (tmp)
+	{
+		if (tmp->number > 2147483647 || tmp->number < -2147483648)
+		{
+			ft_lstclear(&stack);
+			error(3);
+		}
+		tmp = tmp->next;
+	}
 }

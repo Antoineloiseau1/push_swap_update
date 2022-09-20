@@ -3,20 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anloisea <anloisea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 16:59:56 by anloisea          #+#    #+#             */
-/*   Updated: 2022/09/16 14:50:01 by anloisea         ###   ########.fr       */
+/*   Updated: 2022/09/20 13:08:50 by antoine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+long long	ft_atoi(const char *str)
 {
-	int	i;
-	int	result;
-	int	minus;
+	int			i;
+	long long	result;
+	int			minus;
 
 	// if (!ft_strncmp("-99999999999999999999999999", str, ft_strlen(str)))
 	// 	return (0);
@@ -38,5 +38,5 @@ int	ft_atoi(const char *str)
 		result = (result * 10) + (str[i] - '0');
 		i++;
 	}
-	return ((int)result * minus);
+	return (result * minus);
 }

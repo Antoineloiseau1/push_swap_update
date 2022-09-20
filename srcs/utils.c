@@ -6,7 +6,7 @@
 /*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 14:04:27 by anloisea          #+#    #+#             */
-/*   Updated: 2022/09/18 15:46:07 by antoine          ###   ########.fr       */
+/*   Updated: 2022/09/20 10:34:40 by antoine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,15 +27,15 @@ void	clear_split(char **split)
 	free(split);
 }
 
-int is_sorted(t_stack *a)
+int	is_sorted(t_stack *a)
 {
-    while (a->next)
-    {
-        if (a->number > a->next->number)
-            return (0);
-        a = a->next;
-    }
-    return (1);
+	while (a->next)
+	{
+		if (a->number > a->next->number)
+			return (0);
+		a = a->next;
+	}
+	return (1);
 }
 
 int	lst_len(t_stack *lst)
@@ -43,7 +43,7 @@ int	lst_len(t_stack *lst)
 	int	i;
 
 	i = 0;
-	while(lst)
+	while (lst)
 	{
 		i++;
 		lst = lst->next;

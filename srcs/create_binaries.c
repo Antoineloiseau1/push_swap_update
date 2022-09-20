@@ -6,7 +6,7 @@
 /*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 17:50:08 by anloisea          #+#    #+#             */
-/*   Updated: 2022/09/18 18:49:48 by antoine          ###   ########.fr       */
+/*   Updated: 2022/09/20 12:24:02 by antoine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,8 @@
 
 void	free_binaries(t_stack *stack)
 {
-	while(stack)
+	while (stack)
 	{
-		//stack->binary = NULL;
 		free(stack->binary);
 		stack = stack->next;
 	}
@@ -33,7 +32,7 @@ int	bin_size(int nb)
 		i++;
 	}
 	i++;
-	return(i);
+	return (i);
 }
 
 char	*itao_b(int nb)
@@ -65,3 +64,4 @@ void	create_binaries(t_stack *stack)
 		stack = stack->next;
 	}
 }
+

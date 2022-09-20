@@ -6,7 +6,7 @@
 /*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/07 12:19:25 by anloisea          #+#    #+#             */
-/*   Updated: 2022/09/18 18:49:32 by antoine          ###   ########.fr       */
+/*   Updated: 2022/09/20 13:16:19 by antoine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	main(int argc, char *argv[])
 /* 	pour radix sort, il suffit de convertir les ints en binaire, trouver combien de bits a le plus grand nombres puis les trier n fois le nombre de bits en pushant les 0 dans la stack b;
 	recommencer pour chaque bit. */
 	// else
-	// 	radix_sort(a, b);
+	// 	a = radix_sort(a, b);
 	
 	// display_lst(a, b);
 	free_binaries(a);

@@ -6,7 +6,7 @@
 /*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 13:00:12 by anloisea          #+#    #+#             */
-/*   Updated: 2022/09/18 18:39:22 by antoine          ###   ########.fr       */
+/*   Updated: 2022/09/20 10:21:14 by antoine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	find_next_lowest(int lowest, int place, t_stack *stack)
 {
-	int	next_lowest; 
+	int		next_lowest;
 	t_stack	*tmp;
 
 	tmp = stack;
@@ -37,7 +37,7 @@ int	find_next_lowest(int lowest, int place, t_stack *stack)
 int	find_lowest(t_stack *stack)
 {
 	t_stack	*tmp;
-	int	lowest;
+	int		lowest;
 
 	lowest = stack->number;
 	tmp = stack;
@@ -59,7 +59,7 @@ void	create_place(t_stack *stack)
 	int	lowest;
 	int	i;
 	int	len;
-	
+
 	lowest = find_lowest(stack);
 	i = 2;
 	len = lst_len(stack);
