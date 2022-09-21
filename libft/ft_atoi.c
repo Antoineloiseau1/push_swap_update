@@ -6,7 +6,7 @@
 /*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 16:59:56 by anloisea          #+#    #+#             */
-/*   Updated: 2022/09/20 15:54:59 by antoine          ###   ########.fr       */
+/*   Updated: 2022/09/21 13:16:50 by antoine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,6 @@ long long	ft_atoi(const char *str)
 	long long	result;
 	int			minus;
 
-	// if (!ft_strncmp("-99999999999999999999999999", str, ft_strlen(str)))
-	// 	return (0);
-	// if (!ft_strncmp("999999999999999999999999999", str, ft_strlen(str)))
-	// 	return (-1);
 	i = 0;
 	result = 0;
 	minus = 1;

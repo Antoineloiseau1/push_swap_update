@@ -6,7 +6,7 @@
 /*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/07 12:19:25 by anloisea          #+#    #+#             */
-/*   Updated: 2022/09/20 16:42:57 by antoine          ###   ########.fr       */
+/*   Updated: 2022/09/21 12:52:06 by antoine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int	main(int argc, char *argv[])
 	if (argc < 2)
 		error(-1);
 	a = parse(argv);
+	update_index(a);
 	if (is_sorted(a))
 		return (EXIT_SUCCESS);
 	else if (lst_len(a) == 2 && a->number > a->next->number)
@@ -32,10 +33,8 @@ int	main(int argc, char *argv[])
 	else
 	{
 		create_place(a);
-		create_binaries(a);
 		a = radix_sort(a, b);
 	}
-	free_binaries(a);
 	ft_lstclear(&a);
 	return (0);
 }

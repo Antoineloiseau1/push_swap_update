@@ -6,7 +6,7 @@
 /*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 17:50:08 by anloisea          #+#    #+#             */
-/*   Updated: 2022/09/20 12:24:02 by antoine          ###   ########.fr       */
+/*   Updated: 2022/09/21 12:21:55 by antoine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,4 +64,3 @@ void	create_binaries(t_stack *stack)
 		stack = stack->next;
 	}
 }
-

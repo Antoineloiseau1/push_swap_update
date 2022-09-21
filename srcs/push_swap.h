@@ -6,7 +6,7 @@
 /*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 17:32:31 by anloisea          #+#    #+#             */
-/*   Updated: 2022/09/20 16:39:26 by antoine          ###   ########.fr       */
+/*   Updated: 2022/09/21 13:15:38 by antoine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,6 @@ typedef struct s_stack
 	struct s_stack	*next;
 }					t_stack;
 # endif
-
-// create binary:
-int		bin_size(int nb);
-char	*itao_b(int nb);
-void	create_binaries(t_stack *stack);
-void	free_binaries(t_stack *stack);
 
 //Indexing:
 
@@ -60,11 +54,11 @@ void	display_lst(t_stack *a, t_stack *b);
 void	display_stack(t_stack *stack);
 
 //sort functions:
+t_stack	*sort_three(t_stack *a);
 t_stack	*sort_five(t_stack *a, t_stack *b);
 int		find_lowest_index(t_stack *lst);
-t_stack	*sort_three(t_stack *a);
 t_stack	*radix_sort(t_stack *a, t_stack *b);
-size_t	look_for_longest_bin(t_stack *stack);
+int		get_max_bits(t_stack *a);
 
 // Swap functions:
 void	swap_a(t_stack *a);

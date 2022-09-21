@@ -6,7 +6,7 @@
 #    By: antoine <antoine@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/02 17:24:39 by anloisea          #+#    #+#              #
-#    Updated: 2022/09/20 16:33:30 by antoine          ###   ########.fr        #
+#    Updated: 2022/09/21 13:13:19 by antoine          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,21 +14,13 @@ NAME		= 	push_swap
 SRCS		= 	./srcs/push_swap.c \
 				./srcs/utils.c\
 				./srcs/parse.c \
-				./srcs/check_for_char.c \
-				./srcs/display_lst.c \
-				./srcs/check_double.c \
 				./srcs/create_place.c \
 				./srcs/ft_push.c \
 				./srcs/ft_rev_rotate.c \
 				./srcs/ft_rotate.c \
 				./srcs/ft_swap.c \
-				./srcs/sort_three.c \
-				./srcs/sort_five.c \
-				./srcs/create_binaries.c \
-				./srcs/check_limits.c \
-				./srcs/radix_sort.c \
-				./srcs/look_for_longest_bin.c
-			
+				./srcs/sort_functions.c
+				
 OBJS	= 		${SRCS:.c=.o}
 
 HDR		= push_swap.h
@@ -43,7 +35,8 @@ ${LIB}:
 			@make all -sC ./libft
 
 ${NAME}:	${LIB}	${OBJS}
-			${CC} ${CFLAGS} ${OBJS} -L./libft -lft -o ${NAME} 
+			@${CC} ${CFLAGS} ${OBJS} -L./libft -lft -o ${NAME}
+			@echo "\033[92mpush_swap compiled successfully\033[0m"
 
 clean:
 			@make clean -sC ./libft
@@ -54,10 +47,5 @@ fclean:		clean
 			rm -rf ${NAME} ${LIB}
 
 re:			fclean all
-
-# debug:
-# 			@make all -C ${PRINTF}
-# 			@cp ./ft_printf/libftprintf.a ${LIB}
-# 			gcc -g ${CFLAGS} ${SRCS} -L. -lprintf -o ${NAME} -fsanitize=address
 
 .PHONY:		all clean fclean re
